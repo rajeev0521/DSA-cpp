@@ -24,6 +24,8 @@ vector<int> intersection(vector<int> arr1, vector<int> arr2){
         }
     }
     return result;
+    // time complexity: O(n + m)
+    // space complexity: O(n + m)
 }
 
 
