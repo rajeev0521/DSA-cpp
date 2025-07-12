@@ -145,6 +145,23 @@ void delFromEnd(List* head){
     delete temp; 
 }
 
+void reverseLL(List* head){
+    List* start = head;
+    List* end = head;
+    int count = 1;
+
+    while(end -> next != nullptr){
+        end = end -> next;
+        count++;
+    }
+
+    for(int i = 0; i < count / 2; i++){
+        swap(start -> data, end -> data);
+        start = start -> next;
+        end = end -> prev;
+    }
+}
+
 
 int main(){
 
@@ -159,6 +176,10 @@ int main(){
     traversDLL(head);
 
     insertAtEnd(head, 55);
+    traversDLL(head);
+
+    reverseLL(head);
+    cout <<"reverse Linked list" <<endl;
     traversDLL(head);
 
     head = delFromStart(head);
